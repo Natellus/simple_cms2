@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'test2/index'
-
   root 'demo#index'
+
+  resources :subjects
 
   get 'demo/index'
 
