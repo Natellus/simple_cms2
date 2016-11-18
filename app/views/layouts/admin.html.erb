@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SimpleCms</title>
+  </head>
+  <body>
+    <% if !flash[:notice].blank? %>
+      <div clas="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <!-- before yeald -->
+    <%= yield %>
+    <!-- after yeald -->
+  </body>
+</html>
