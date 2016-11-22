@@ -7,7 +7,6 @@
       <th>Name</th>
       <th>Page ID</th>
       <th>Visible </th>
-      <th>Content</th>
       <th>Actions</th>
     </tr>
     <% @sections.each do |section| %>
@@ -15,8 +14,7 @@
         <td><%= section.position %></td>
         <td><%= section.name %></td>
         <td><%= section.page_id %></td>
-        <td class="center"> <%= section.visible ? 'Yes' : 'No' %> </td>
-        <td class="center"> <%= section.content %> </td>
+        <td class="center"> <%= status_tag(section.visible) %> </td>
         <td class="actions">
           <%= link_to("Show", section_path(section), :class => 'action now') %>
           <%= link_to("Edit", edit_section_path(section), :class => 'action now') %>

@@ -14,8 +14,8 @@
       <tr>
         <td><%= subject.position %></td>
         <td><%= subject.name %></td>
-        <td class="center"> <%= subject.visible ? 'Yes' : 'No' %> </td>
-        <td class="center"> <%= subject.pages.size %> </td>
+        <td class="center"><%= status_tag(subject.visible) %> </td>
+        <td class="center"><%= subject.pages.size %> </td>
         <td class="actions">
           <%= link_to("Show", subject_path(subject.id), :class => 'action now') %>
           <%= link_to("Edit", edit_subject_path(subject), :class => 'action now') %>
