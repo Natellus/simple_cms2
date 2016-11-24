@@ -11,6 +11,8 @@ class SectionsController < ApplicationController
 
   def new
     @section = Section.new
+    @section_count = Section.count + 1
+    @pages = Page.order(:position)
   end
 
   def create
@@ -19,6 +21,8 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section created successfully"
       redirect_to(sections_path)
     else
+      @section_count = Section.count +1
+      @pages = Page.order(:position)
       render('new')
     end
 
@@ -27,6 +31,8 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
+    @section_count = Section.count
+    @pages = Page.order(:position)
   end
 
   def update
@@ -35,6 +41,8 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section updated successfully"
       redirect_to(sections_path)
     else
+      @section_count = Section.count
+      @pages = Page.order(:position)
       render('edit')
     end
   end
